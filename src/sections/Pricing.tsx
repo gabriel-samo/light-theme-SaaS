@@ -67,6 +67,7 @@ export const Pricing = () => {
         <div className="flex flex-col gap-6 items-center mt-10 lg:flex-row lg:items-end lg:justify-center">
           {pricingTiers.map((tier) => (
             <div
+              key={tier.title}
               className={twMerge(
                 "card",
                 tier.inverse === true && "border-black bg-black text-white"
@@ -107,7 +108,7 @@ export const Pricing = () => {
               </button>
               <ul className="flex flex-col gap-5 mt-8">
                 {tier.features.map((feature) => (
-                  <li className="text-sm flex item-center gap-4">
+                  <li className="text-sm flex item-center gap-4" key={feature}>
                     <CheckIcon className="h-6 w-6" />
                     <span className="">{feature}</span>
                   </li>
